@@ -1,15 +1,18 @@
 :root {
     --bg-dark: #1D1D1D;
+    --white: #fff;
     --text-dark: #9C9C9C;
     --primary-dark: #FFE500;
     --second-dark: #16B5C7;
 
     --bg-light: #fff;
+    --dark: black;
     --text-light: #262626;
     --primary-light: #16B5C7;
     --second-light: #FFE500;
 
     --bg-color: var(--bg-dark);
+    --interface-color: var(--white);
     --text-color: var(--text-dark);
     --primary-color: var(--primary-dark);
     --second-color: var(--second-dark);
@@ -18,6 +21,7 @@
 @media (prefers-color-scheme: light) {
    :root {
     --bg-color: var(--bg-light);
+    --interface-color: var(--dark);
     --text-color: var(--text-light);
     --primary-color: var(--primary-light);
     --second-color: var(--second-light);
@@ -27,6 +31,12 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Anonymous Pro', monospace;
     background: var(--bg-color);
     color: var(--text-color);
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1170px;
 }

@@ -1,3 +1,7 @@
+<script>
+    export let segment;
+</script>
+
 <style>
     .nav__wrap {
         border-top: 2px solid #9C9C9C;
@@ -28,7 +32,7 @@
         color: #16B5C7;
     }
 
-    .nav__href.active {
+    [aria-current], [aria-current]:hover {
         color: #FFE500;
     }
 </style>
@@ -36,9 +40,9 @@
 <div class="nav__wrap">
     <nav class="nav wrapper">
         <ul class="nav__list">
-            <li><a class="nav__href" href="">Проекты</a></li>
-            <li><a class="nav__href" href="">О Студии</a></li>
-            <li><a class="nav__href active" href="">Контакты</a></li>
+            <li><a class="nav__href" aria-current="{segment === 'projects' ? 'page' : undefined}"  href="projects" >Проекты</a></li>
+            <li><a class="nav__href" aria-current="{segment === 'about' ? 'page' : undefined}"  href="about">О Студии</a></li>
+            <li><a class="nav__href" aria-current="{segment === 'contacts' ? 'page' : undefined}"  href="contacts">Контакты</a></li>
         </ul>
     </nav>
 </div>

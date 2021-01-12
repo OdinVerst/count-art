@@ -3,11 +3,11 @@
         display: flex;
         width: 20px;
         height: 20px;
-        fill: #9C9C9C;
+        fill: var(--text-color);
     }
 
     .header__link:hover {
-        fill: #16B5C7;
+        fill: var(--second-color);
     }
 
     .header__link-ico {

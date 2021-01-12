@@ -17,14 +17,14 @@
   }
 
   .banner__heading {
-      color: white;
+      color: var(--interface-color);
       font-size: 31px;
       max-width: 220px;
       line-height: 1.2;
   }
 
   .banner__subtitle {
-      color: #16B5C7;
+      color: var(--second-color);
       max-width: 220px;
       font-size: 17px;
       line-height: 1.2;

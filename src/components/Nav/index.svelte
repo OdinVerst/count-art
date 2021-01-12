@@ -4,8 +4,8 @@
 
 <style>
     .nav__wrap {
-        border-top: 2px solid #9C9C9C;
-        border-bottom: 2px solid #9C9C9C;
+        border-top: 2px solid var(--text-color);
+        border-bottom: 2px solid var(--text-color);
     }
 
     .nav {
@@ -22,10 +22,10 @@
 
     .nav__href {
         display: flex;
-        color: #9C9C9C;
+        color: var(--text-color);
         text-decoration: none;
         padding: 26px 60px;
-        border-left: 2px solid #9C9C9C;
+        border-left: 2px solid var(--text-color);
     }
 
     .nav__href:hover {

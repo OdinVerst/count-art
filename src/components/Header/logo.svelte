@@ -1,17 +1,15 @@
 <style>
     .header__logo {
-        fill: white;
+        fill: var(--interface-color);
         width: 175px;
     }
 
     .additional {
-        fill: #16B5C7;
+        fill: var(--second-dark);
     }
 
-    @media (prefers-color-scheme: light) {
-        .header__logo {
-            fill: black;
-        }
+    .header__logo-title {
+        color: var(--text-color);
     }
 </style>
 
@@ -20,4 +18,4 @@
     <path d="M0 0v46h175V0H0zm171.7 3.2v39.6h-18.4V3.2h18.4zM3.3 3.2h148.4v39.6H3.3V3.2z"/>
     <path class="additional" d="M159.7 17l.9-1.8h4l.8 1.8h1l-3.3-7.2h-1l-3.5 7.2h1.1zm2.9-6.2l1.6 3.6h-3.3l1.7-3.6zM165.4 22.6c.3-.4.4-.8.4-1.4 0-.8-.2-1.4-.8-1.8-.6-.5-1.3-.7-2.3-.7h-2.9V26h1v-2.2h2.4l1.6 2.2h1.2l-1.8-2.4c.5-.2 1-.5 1.2-.9zm-2.7.2h-1.8v-3.2h1.8c.7 0 1.2.1 1.5.4.4.3.6.7.6 1.2s-.2 1-.6 1.2c-.3.3-.8.4-1.5.4zM159.5 30h2.5v6.2h1V30h2.7V29h-6.2v1z"/>
 </svg>
-<p>Студия<br>Александра Раздолянского</p>
+<p class="header__logo-title">Студия<br>Александра Раздолянского</p>

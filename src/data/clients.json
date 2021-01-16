@@ -1,0 +1,24 @@
+{
+  "clients": [
+    {
+      "name": "Count Art <br> test",
+      "img": "/img/clients/count.svg"
+    },
+    {
+      "name": "Count Art 2",
+      "img": "/img/clients/count.svg"
+    },
+    {
+      "name": "Count Art 3",
+      "img": "/img/clients/count.svg"
+    },
+    {
+      "name": "Count Art 4",
+      "img": "/img/clients/count.svg"
+    },
+    {
+      "name": "Count Art 5",
+      "img": "/img/clients/count.svg"
+    }
+  ]
+}

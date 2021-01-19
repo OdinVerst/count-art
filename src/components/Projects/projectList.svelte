@@ -2,7 +2,7 @@
     import ProjectPreview from './projectPreview.svelte';
     import Heading from '../Heading/index.svelte';
 
-    export let posts;
+    export let posts, inner;
 </script>
 
 <style>
@@ -15,7 +15,7 @@
 </style>
 
 <section class="project-list">
-    <Heading name="Проекты" />
+    <Heading name="Проекты" notTopBr={inner} />
     <div class="wrapper post-list__grid">
         {#each posts as post}
             <ProjectPreview {post} />

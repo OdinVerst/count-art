@@ -1,3 +1,8 @@
+<script>
+    import SocialList from "../../data/social.json"
+    const { social } = SocialList;
+</script>
+
 <style>
     .header__link {
         display: flex;
@@ -16,14 +21,12 @@
     }
 </style>
 
-<a class="header__link" href="https://instagram.com/count_art_studio" aria-label="Ссылка наа Instagram">
-    <svg class="header__link-ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-        <path d="M12.27 4.69a.96.96 0 100-1.92.96.96 0 000 1.92zM8 3.9a4.1 4.1 0 100 8.2 4.1 4.1 0 000-8.2zm0 6.77a2.67 2.67 0 110-5.34 2.67 2.67 0 010 5.34z"/>
-        <path d="M8 1.44c2.14 0 2.39 0 3.23.05.51 0 1.01.1 1.49.27a2.65 2.65 0 011.52 1.52c.17.48.27.98.27 1.49.04.84.05 1.1.05 3.23 0 2.14 0 2.39-.05 3.23 0 .51-.1 1.01-.27 1.49a2.65 2.65 0 01-1.52 1.52c-.48.17-.98.27-1.49.27-.84.04-1.1.05-3.23.05-2.14 0-2.39 0-3.23-.05-.51 0-1.01-.1-1.49-.27a2.65 2.65 0 01-1.52-1.52 4.43 4.43 0 01-.27-1.49c-.04-.84-.05-1.1-.05-3.23 0-2.14 0-2.39.05-3.23 0-.51.1-1.01.27-1.49a2.65 2.65 0 011.52-1.52c.48-.17.98-.27 1.49-.27.84-.04 1.1-.05 3.23-.05zM8 0C5.83 0 5.55 0 4.7.05c-.66.01-1.32.14-1.94.37A4.1 4.1 0 00.42 2.76 5.87 5.87 0 00.05 4.7C0 5.56 0 5.83 0 8s0 2.45.05 3.3c.01.66.14 1.32.37 1.94a4.1 4.1 0 002.34 2.34c.62.23 1.28.36 1.94.37.86.04 1.13.05 3.3.05s2.45 0 3.3-.05a5.87 5.87 0 001.94-.37 4.1 4.1 0 002.34-2.34c.23-.62.36-1.28.37-1.94A57 57 0 0016 8c0-2.17 0-2.45-.05-3.3a5.87 5.87 0 00-.37-1.94A4.1 4.1 0 0013.24.42 5.87 5.87 0 0011.3.05 55.5 55.5 0 008 0z"/>
-    </svg>
-</a>
-<a class="header__link" href="https://twitter.com/CountArt2" aria-label="Ссылка наа Twitter">
-    <svg class="header__link-ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16">
-        <path d="M17.6 4v.5A11.4 11.4 0 010 14.2a8.4 8.4 0 006-1.7 4 4 0 01-3.8-2.8H4a4 4 0 01-3.2-4 4 4 0 001.8.4A4 4 0 011.4.7 11.5 11.5 0 009.7 5l-.1-1a4 4 0 014-4 4 4 0 013 1.3 8 8 0 002.5-1 4 4 0 01-1.8 2.2 8 8 0 002.4-.6c-.6.8-1.3 1.5-2 2z"/>
-    </svg>
-</a>
+{#each social as item}
+    <a class="header__link" href={item.url} aria-label={item.label}>
+        <svg class="header__link-ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox={item.viewBox}>
+            {#each item.svg as path}
+                <path d={path} />
+            {/each}
+        </svg>
+    </a>
+{/each}

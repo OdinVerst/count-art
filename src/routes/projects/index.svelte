@@ -18,6 +18,6 @@
 </svelte:head>
 
 <div class="main_container">
-    <ProjectList {posts} />
+    <ProjectList {posts} inner={true} />
     <Feedback />
 </div>

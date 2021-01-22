@@ -18,14 +18,30 @@
     --second-color: var(--second-dark);
 }
 
-@media (prefers-color-scheme: light) {
-   :root {
+:root[data-color-mode="dark"] {
+    --bg-color: var(--bg-dark);
+    --interface-color: var(--white);
+    --text-color: var(--text-dark);
+    --primary-color: var(--primary-dark);
+    --second-color: var(--second-dark);
+}
+
+:root[data-color-mode="light"] {
     --bg-color: var(--bg-light);
     --interface-color: var(--dark);
     --text-color: var(--text-light);
     --primary-color: var(--primary-light);
     --second-color: var(--second-light);
-   } 
+}
+
+@media (prefers-color-scheme: light) {
+    :root[data-color-mode="auto"] {
+        --bg-color: var(--bg-light);
+        --interface-color: var(--dark);
+        --text-color: var(--text-light);
+        --primary-color: var(--primary-light);
+        --second-color: var(--second-light);
+    }
 }
 
 *, *::after, *::before {

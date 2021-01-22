@@ -37,23 +37,43 @@
 </style>
 
 <script>
-    const mapping = {
-        "false": false,
-        "true": true
-    }
+    import {themeValue} from '../../utils/stores.js';
+
+    let bool = true;
+
+    const themeValues = [
+        {
+            name: "light",
+            isDark: "false",
+            value: false
+        },
+        {
+            name: "dark",
+            isDark: "true",
+            value: true
+        }
+    ];
+
+    themeValue.subscribe(value => {
+        const current = themeValues.find(item => item.name === value);
+        bool = current.value;
+    });
 
     const clickHandler = (evt) => {
-        const { target } = evt;
+        const {target} = evt;
         const value = target.getAttribute('aria-checked');
-        target.setAttribute('aria-checked', !mapping[value]);
+        const newValue = themeValues.find(item => item.isDark !== value);
 
-        document.documentElement.setAttribute('data-theme-light', value)
+        themeValue.update(value => newValue.name);
+        localStorage.setItem('theme', newValue.name);
+        document.documentElement.setAttribute('data-color-mode', newValue.name);
     }
 </script>
 
 <div class="header__theme-wrap">
     Переключить тему
-    <div class="header__theme" on:click={clickHandler} role="checkbox" aria-checked="false" aria-label="Темная тема">
+    <div class="header__theme" on:click={clickHandler} role="checkbox" aria-checked={bool.toString()}
+         aria-label="Темная тема">
         <div class="header__theme-control"></div>
     </div>
 </div>

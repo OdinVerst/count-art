@@ -73,12 +73,17 @@
     }
 
     .feedback__form--privacy {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        max-width: 340px;
+        margin: 0 auto;
     }
 
     .check__box {
-        position: absolute;
-        margin-left: -35px;
+        position: relative;
+        display: block;
+        flex-shrink: 0;
+        margin-right: 15px;
         width: 20px;
         height: 20px;
         overflow: hidden;
@@ -93,6 +98,8 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        opacity: 0;
+        z-index: -10;
     }
 
     .check__input:checked + .check__box::after {
@@ -112,6 +119,17 @@
         }
     }
 
+    @media (max-width: 860px) {
+        .feedback__form--bottom {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .feedback__form--privacy {
+            max-width: 100%;
+        }
+    }
+
     @media (max-width: 700px) {
         .feedback__form-wrap {
             grid-template-columns: 1fr;
@@ -121,6 +139,12 @@
             grid-column-start: auto;
             grid-row-start: auto;
             grid-row-end: auto;
+        }
+    }
+
+    @media (max-width: 425px) {
+        .feedback__form--privacy {
+            font-size: 14px;
         }
     }
 </style>
@@ -150,7 +174,7 @@
         <div class="feedback__form--bottom wrapper">
             <label class="feedback__form--privacy check option">
                 <input class="check__input" type="checkbox">
-                <span class="check__box"></span>
+                <div class="check__box"></div>
                 Я согласен на обработку
                 персональных данных
             </label>

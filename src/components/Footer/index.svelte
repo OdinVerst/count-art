@@ -25,6 +25,30 @@
         display: inline-block;
         margin-right: 15px;
     }
+    
+    @media (max-width: 543px) {
+        .footer {
+            flex-wrap: wrap;
+        }
+
+        .dev {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            padding-top: 1em;
+        }
+
+        .dev::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 20px;
+            height: 1px;
+            background: var(--text-color);
+            transform: translateX(-50%);
+        }
+    }
 </style>
 
 <footer class="footer">

@@ -39,6 +39,33 @@
           padding-left: 1.5em;
       }
   }
+
+  @media (max-width: 870px) {
+      .banner__content {
+          position: static;
+          transform: none;
+      }
+
+      .banner {
+          flex-direction: column;
+          margin-top: 2em;
+      }
+
+      .banner__heading, .banner__subtitle {
+          max-width: 100%;
+          text-align: center;
+      }
+  }
+  
+  @media (max-width: 425px) {
+      .banner__heading {
+          font-size: 25px;
+      }
+
+      .banner__subtitle {
+          font-size: 15px;
+      }
+  }
 </style>
 
 <section class="banner wrapper">

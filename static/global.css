@@ -1,75 +1,126 @@
-body {
-	font-family: "Ubuntu Mono";
-	height: 100vh;
+:root {
+    --bg-dark: #1D1D1D;
+    --white: #fff;
+    --text-dark: #9C9C9C;
+    --primary-dark: #FFE500;
+    --second-dark: #16B5C7;
+
+    --bg-light: #fff;
+    --dark: black;
+    --text-light: #262626;
+    --primary-light: #16B5C7;
+    --second-light: #FFC804;
+
+    --bg-color: var(--bg-dark);
+    --interface-color: var(--white);
+    --text-color: var(--text-dark);
+    --primary-color: var(--primary-dark);
+    --second-color: var(--second-dark);
 }
 
-h1{
-	font-weight: 300;
-	color: #094248;
+:root[data-color-mode="dark"] {
+    --bg-color: var(--bg-dark);
+    --interface-color: var(--white);
+    --text-color: var(--text-dark);
+    --primary-color: var(--primary-dark);
+    --second-color: var(--second-dark);
+}
+
+:root[data-color-mode="light"] {
+    --bg-color: var(--bg-light);
+    --interface-color: var(--dark);
+    --text-color: var(--text-light);
+    --primary-color: var(--primary-light);
+    --second-color: var(--second-light);
+}
+
+@media (prefers-color-scheme: light) {
+    :root[data-color-mode="auto"] {
+        --bg-color: var(--bg-light);
+        --interface-color: var(--dark);
+        --text-color: var(--text-light);
+        --primary-color: var(--primary-light);
+        --second-color: var(--second-light);
+    }
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Anonymous Pro', monospace;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 1170px;
 }
 
 #sapper {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100%;
+}
+
+.content {
+    color: var(--interface-color);
+}
+
+.img--full {
+    width: 100%;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.bl-half {
     display: flex;
-    height: 100%;
-    align-items: center;
+}
+
+.bl-half > * {
+    width: 50%;
+}
+
+.bl-text-center {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: column;
-}
-
-.email__link:before{
-    content: "";
-    display: inline-block;
-    background: url("../img/mail.svg") no-repeat;
-    background-size: contain;
-    width: 40px;
-    height: 40px;
-    vertical-align: middle;
-    margin-right: 20px;
-}
-
-.email__link{
-    font-size: 20px;
-}
-
-.wrapper{
-    z-index: 10;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px 50px;
-    border-radius: 7px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 0 10px rgba(0,0,0,0.22);
+    padding: 0 3em;
 }
 
-.mouse-bg {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    position: fixed;
+.bl-tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
-body {
-    background-image: url('../img/pattern2.jpg');
+.content p:not([class]) {
+    margin: 1em auto;
+    max-width: 600px;
+    line-height: 1.4;
 }
 
-a{
-    color: #16B5C7;
+.swiper-wrapper {
+    display: flex;
 }
 
-
-@media screen and (max-width: 650px) {
-    .wrapper{
+@media (max-width: 1170px) {
+    .wrapper {
         width: 100%;
-        padding: 25px 0;
-        border-radius: 0;
-    }
-    h1{
-        font-size: 25px !important;
-        text-align: center;
-    }
-    .email__link{
-        font-size: 25px;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
     }
 }

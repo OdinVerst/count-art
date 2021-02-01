@@ -35,6 +35,15 @@
     [aria-current], [aria-current]:hover {
         color: #FFE500;
     }
+
+    @media (max-width: 777px) {
+        .nav__wrap {
+            height: 20px;
+        }
+        .nav {
+            display: none;
+        }
+    }
 </style>
 
 <div class="nav__wrap">

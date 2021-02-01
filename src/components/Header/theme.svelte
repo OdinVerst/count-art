@@ -1,6 +1,7 @@
 <style>
     .header__theme-wrap {
         display: flex;
+        align-items: center;
         gap: 24px;
     }
 
@@ -8,12 +9,8 @@
         position: relative;
         width: 35px;
         height: 20px;
-        background: #16B5C7;
+        background: var(--second-color);
         border-radius: 20px;
-    }
-
-    .header__theme[aria-checked="false"] {
-        background: #FFE500;
     }
 
     .header__theme-control {

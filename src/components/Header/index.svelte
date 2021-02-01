@@ -2,7 +2,7 @@
     import Social from './social.svelte';
     import Theme from './theme.svelte';
     import Logo from './logo.svelte';
-
+    import Burger from './burger.svelte';
     export let segment;
 </script>
 
@@ -11,7 +11,8 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 54px 0 30px;
+        padding-top: 54px;
+        padding-bottom: 30px;
     }
 
     .header__logo-wrap {
@@ -25,8 +26,26 @@
     .header__meta {
         display: flex;
         gap: 24px;
+        margin-bottom: 5px;
+    }
+    
+    @media (max-width: 777px) {
+        .header__meta {
+            display: none;
+        }
+
+        .header {
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 
+    @media (max-width: 420px) {
+        .header {
+            font-size: 14px;
+        }
+    }
 </style>
 
 <header class="header wrapper">
@@ -43,4 +62,5 @@
         <Social/>
         <Theme/>
     </div>
+    <Burger />
 </header>

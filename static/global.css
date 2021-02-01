@@ -9,7 +9,7 @@
     --dark: black;
     --text-light: #262626;
     --primary-light: #16B5C7;
-    --second-light: #FFE500;
+    --second-light: #FFC804;
 
     --bg-color: var(--bg-dark);
     --interface-color: var(--white);
@@ -85,14 +85,42 @@ body {
     margin-top: 50px;
 }
 
+.bl-half {
+    display: flex;
+}
+
+.bl-half > * {
+    width: 50%;
+}
+
+.bl-text-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em;
+}
+
+.bl-tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
 .content p:not([class]) {
     margin: 1em auto;
     max-width: 600px;
     line-height: 1.4;
 }
 
+.swiper-wrapper {
+    display: flex;
+}
+
 @media (max-width: 1170px) {
     .wrapper {
         width: 100%;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
     }
 }

@@ -13,6 +13,17 @@
 
 <script>
     export let post;
+
+    import { onMount } from 'svelte';
+    import Swiper from 'swiper';
+
+    onMount(() => {
+        var mySwiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1
+        })
+    });
+
 </script>
 
 <style>
@@ -48,6 +59,7 @@
 
 <svelte:head>
 	<title>{post.title}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </svelte:head>
 
 <div class="wrapper project">

@@ -75,6 +75,54 @@
     .feedback__form--privacy {
         text-align: center;
     }
+
+    .check__box {
+        position: absolute;
+        margin-left: -35px;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        background-color: var(--bg-color);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        box-shadow: 0 0 0 3px var(--primary-color);
+    }
+
+    .check__input {
+        position: absolute;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .check__input:checked + .check__box::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        left: 50%;
+        background: var(--primary-color);
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 1170px) {
+        .feedback__form {
+            padding: 0 1.5em;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .feedback__form-wrap {
+            grid-template-columns: 1fr;
+        }
+
+        .feedback__label--textarea {
+            grid-column-start: auto;
+            grid-row-start: auto;
+            grid-row-end: auto;
+        }
+    }
 </style>
 
 <section class="feedback">
@@ -100,8 +148,9 @@
         </div>
         <div class="feedback__form--separate"></div>
         <div class="feedback__form--bottom wrapper">
-            <label class="feedback__form--privacy">
-                <input type="checkbox">
+            <label class="feedback__form--privacy check option">
+                <input class="check__input" type="checkbox">
+                <span class="check__box"></span>
                 Я согласен на обработку
                 персональных данных
             </label>

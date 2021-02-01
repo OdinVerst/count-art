@@ -29,6 +29,16 @@
       font-size: 17px;
       line-height: 1.2;
   }
+
+  .banner__img {
+      max-width: 100%;
+  }
+
+  @media (max-width: 1170px) {
+      .banner__content {
+          padding-left: 1.5em;
+      }
+  }
 </style>
 
 <section class="banner wrapper">
@@ -37,5 +47,5 @@
             не интересует</h1>
         <p class="banner__subtitle">умеем справляться со сложными задачами</p>
     </div>
-    <img src={Image} alt="Cейчас потом не интересует" />
+    <img class="banner__img" src={Image} alt="Cейчас потом не интересует" />
 </section>

@@ -1,5 +1,12 @@
 <script>
-    import Image from './img/banner_main.png'
+    import Image from './img/banner_main.png';
+    import {themeValue} from '../../utils/stores.js';
+
+    let stateValue = 'dark';
+
+    themeValue.subscribe(value => {
+        stateValue = value;
+    })
 </script>
 
 <style>
@@ -74,5 +81,8 @@
             не интересует</h1>
         <p class="banner__subtitle">умеем справляться со сложными задачами</p>
     </div>
-    <img class="banner__img" src={Image} alt="Cейчас потом не интересует" />
+    <picture>
+        <source type="image/webp" srcset="/img/banner/banner-{stateValue}.webp">
+        <img class="banner__img" src="/img/banner/banner-{stateValue}.png" alt="Cейчас потом не интересует" />
+    </picture>
 </section>

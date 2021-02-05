@@ -6,5 +6,9 @@ export const post = (req, res) => {
 		'Content-Type': 'application/json'
     });
 	sendMessageToTelegram(req.body);
-	res.end('send');
+
+	const data = {
+	    status: "send"
+    }
+	res.end(JSON.stringify(data));
 }

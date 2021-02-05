@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import https from 'https';
 
 const token = process.env.TOKEN_TELEGRAM;
 const chatIdArray = [process.env.ADMIN_USER_TG];
@@ -8,7 +9,11 @@ const replacer = (str) => {
     return str.replace(/[.+?^${}()|[\]\\]/g, "\\$&")
 }
 
-export const  sendMessageToTelegram = async (obj) => {
+export const sendMessageToTelegram = async (obj) => {
+    const httpsAgent = new https.Agent({
+        rejectUnauthorized: true,
+    });
+
     const messageBody = `*Заявка с сайта*\n\n*Имя* : ${obj.name}\n*Компания * : ${obj.company}\n*Email* : ${obj.email}\n*Телефон* : ${obj.phone}\n*Cообщение* : ${obj.message}`;
 
     for (const chatId of chatIdArray) {
@@ -21,8 +26,12 @@ export const  sendMessageToTelegram = async (obj) => {
         const response = await fetch(url, {
             method: 'post',
             body: JSON.stringify(body),
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json'},
+            agent: httpsAgent
         });
-        await response.json();
+
+         const res = await response.json();
+        console.log(res)
+
     }
 };

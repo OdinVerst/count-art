@@ -1,6 +1,7 @@
 <script>
     import Feedback from "../../components/Feedback/index.svelte";
     import SocialList from "../../data/social.json";
+    import MessageButton from '../../components/MessageButton/index.svelte';
 
     const { social } = SocialList;
 </script>
@@ -69,5 +70,6 @@
             {/each}
         </div>
     </div>
+    <MessageButton />
     <Feedback />
 </div>

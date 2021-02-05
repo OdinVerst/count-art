@@ -1,6 +1,7 @@
 <script>
     import Feedback from "../../components/Feedback/index.svelte";
     import SocialList from "../../data/social.json";
+    import MessageButton from '../../components/MessageButton/index.svelte';
 
     const {social} = SocialList;
 </script>
@@ -37,5 +38,6 @@
         <p class="about-text">Каждый новый проект - персональный подход и уникальное воплощение</p>
         <img class="about-img" src="/img/about.jpg" alt="">
     </div>
+    <MessageButton />
     <Feedback/>
 </div>

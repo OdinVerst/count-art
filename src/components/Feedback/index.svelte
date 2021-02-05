@@ -68,6 +68,7 @@
     }
 
     .feedback__form--bottom {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -152,9 +153,22 @@
 
 <script>
     import Heading from '../Heading/index.svelte';
+    import Alert from './alert.svelte';
+    let message = false;
+
+    const showMsg = (form) => {
+        const allInputsText = form.querySelectorAll('.feedback__label-text');
+        [...allInputsText].forEach(item => {
+            item.style.opacity = 0;
+        })
+        message = true;
+        setTimeout(() => {
+            message = false
+        }, 2000)
+    }
 
     const submitHandler = (evt) => {
-        const { target } = evt;
+        const {target} = evt;
         const formData = new FormData(target);
         const object = {};
 
@@ -165,11 +179,18 @@
             headers: {
                 'Content-Type': 'application/json'
             }
-        });
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === "send") {
+                    showMsg(target);
+                    target.reset();
+                }
+            });
     }
 
     const changeInputs = (evt) => {
-        const { target } = evt;
+        const {target} = evt;
         const name = target.parentElement.querySelector('.feedback__label-text');
         name.style.opacity = target.value ? 1 : 0;
     }
@@ -177,28 +198,32 @@
 
 
 <section class="feedback">
-    <Heading name="Заказать дизайн" center={true} />
+    <Heading name="Заказать дизайн" center={true}/>
 
     <form class="feedback__form" on:submit|preventDefault={submitHandler}>
         <div class="feedback__form-wrap wrapper">
             <label class="feedback__label">
-                <input name="company" on:change={changeInputs} class="feedback__input" type="text" placeholder="Название компании">
+                <input name="company" on:change={changeInputs} class="feedback__input" type="text"
+                       placeholder="Название компании">
                 <span class="feedback__label-text">Название компании</span>
             </label>
             <label class="feedback__label">
-                <input name="name" on:change={changeInputs} class="feedback__input" type="text" placeholder="Имя">
+                <input name="name" on:change={changeInputs} class="feedback__input" required type="text" placeholder="Имя">
                 <span class="feedback__label-text">Имя</span>
             </label>
             <label class="feedback__label">
-                <input name="email" on:change={changeInputs} class="feedback__input" type="email" placeholder="Электронная почта">
+                <input name="email" on:change={changeInputs} class="feedback__input" required type="email"
+                       placeholder="Электронная почта">
                 <span class="feedback__label-text">Email</span>
             </label>
             <label class="feedback__label">
-                <input name="phone" on:change={changeInputs} class="feedback__input" type="tel" placeholder="Телефон или меседжер для связи">
+                <input name="phone" on:change={changeInputs} class="feedback__input" type="tel"
+                       placeholder="Телефон или меседжер для связи">
                 <span class="feedback__label-text">Телефон</span>
             </label>
             <label class="feedback__label feedback__label--textarea">
-                <textarea name="message" on:change={changeInputs} class="feedback__input feedback__input--textarea" placeholder="Короткое описание проекта"></textarea>
+                <textarea name="message" on:change={changeInputs} class="feedback__input feedback__input--textarea"
+                          placeholder="Короткое описание проекта"></textarea>
                 <span class="feedback__label-text">Сообщение</span>
             </label>
         </div>
@@ -210,6 +235,7 @@
                 Я согласен на обработку
                 персональных данных
             </label>
+            {#if message}<Alert />{/if}
             <button class="feedback__button">Отправить</button>
         </div>
     </form>

@@ -30,8 +30,7 @@ export const sendMessageToTelegram = async (obj) => {
             agent: httpsAgent
         });
 
-         const res = await response.json();
-        console.log(res)
+        const res = await response.json();
 
     }
 };

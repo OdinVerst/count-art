@@ -48,6 +48,8 @@
         background: var(--bg-color);
         color: var(--text-color);
         font-size: 1.1em;
+        margin: 0;
+        border-radius: 0;
     }
 
     .feedback__input--textarea {

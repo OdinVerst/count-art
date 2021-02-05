@@ -1,6 +1,7 @@
 <style>
     .header__logo {
         fill: var(--interface-color);
+        margin-right: 20px;
     }
 
     .header__logo--full {

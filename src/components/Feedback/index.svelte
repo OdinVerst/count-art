@@ -1,22 +1,3 @@
-<script>
-    import Heading from '../Heading/index.svelte';
-
-    const submitHandler = (evt) => {
-        const { target } = evt;
-        const formData = new FormData(target);
-        const object = {};
-
-        formData.forEach((value, key) => object[key] = value);
-        fetch('/contacts.json', {
-            method: 'POST',
-            body: JSON.stringify(object),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-    }
-</script>
-
 <style>
     .feedback__form-wrap {
         display: grid;
@@ -31,6 +12,24 @@
         height: 2px;
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .feedback__label {
+        position: relative;
+    }
+
+    .feedback__label-text {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 2px 5px;
+        background: var(--text-color);
+        border-radius: 5px;
+        color: var(--bg-color);
+        font-size: 14px;
+        margin-right: 5px;
+        opacity: 0;
     }
 
     .feedback__label--textarea {
@@ -151,25 +150,56 @@
     }
 </style>
 
+<script>
+    import Heading from '../Heading/index.svelte';
+
+    const submitHandler = (evt) => {
+        const { target } = evt;
+        const formData = new FormData(target);
+        const object = {};
+
+        formData.forEach((value, key) => object[key] = value);
+        fetch('/contacts.json', {
+            method: 'POST',
+            body: JSON.stringify(object),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+
+    const changeInputs = (evt) => {
+        const { target } = evt;
+        const name = target.parentElement.querySelector('.feedback__label-text');
+        name.style.opacity = target.value ? 1 : 0;
+    }
+</script>
+
+
 <section class="feedback">
     <Heading name="Заказать дизайн" center={true} />
 
     <form class="feedback__form" on:submit|preventDefault={submitHandler}>
         <div class="feedback__form-wrap wrapper">
             <label class="feedback__label">
-                <input name="company" class="feedback__input" type="text" placeholder="Название компании">
+                <input name="company" on:change={changeInputs} class="feedback__input" type="text" placeholder="Название компании">
+                <span class="feedback__label-text">Название компании</span>
             </label>
             <label class="feedback__label">
-                <input name="name" class="feedback__input" type="text" placeholder="Имя">
+                <input name="name" on:change={changeInputs} class="feedback__input" type="text" placeholder="Имя">
+                <span class="feedback__label-text">Имя</span>
             </label>
             <label class="feedback__label">
-                <input name="email" class="feedback__input" type="email" placeholder="Электронная почта">
+                <input name="email" on:change={changeInputs} class="feedback__input" type="email" placeholder="Электронная почта">
+                <span class="feedback__label-text">Email</span>
             </label>
             <label class="feedback__label">
-                <input name="phone" class="feedback__input" type="tel" placeholder="Телефон или меседжер для связи">
+                <input name="phone" on:change={changeInputs} class="feedback__input" type="tel" placeholder="Телефон или меседжер для связи">
+                <span class="feedback__label-text">Телефон</span>
             </label>
             <label class="feedback__label feedback__label--textarea">
-                <textarea name="message" class="feedback__input feedback__input--textarea" placeholder="Короткое описание проекта"></textarea>
+                <textarea name="message" on:change={changeInputs} class="feedback__input feedback__input--textarea" placeholder="Короткое описание проекта"></textarea>
+                <span class="feedback__label-text">Сообщение</span>
             </label>
         </div>
         <div class="feedback__form--separate"></div>

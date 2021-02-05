@@ -18,6 +18,7 @@
 
 <svelte:head>
 	<title>Count ART</title>
+    <meta name="description" content="Дизайн студия Александра Раздолянского" />
 </svelte:head>
 
 <div class="main_container">

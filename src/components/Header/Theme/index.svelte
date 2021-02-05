@@ -2,7 +2,10 @@
     .header__theme-wrap {
         display: flex;
         align-items: center;
-        gap: 24px;
+    }
+
+    .header__theme-wrap span {
+        margin-right: 20px;
     }
 
     .header__theme {
@@ -31,10 +34,24 @@
         right: calc(100% - 18px);
         margin-left: 3px;
     }
+
+    @media (max-width: 777px) {
+        .header__theme-wrap {
+            width: 100%;
+            margin-top: 45px;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+
+        .header__theme-wrap span {
+            max-width: 120px;
+            margin-top: 14px;
+        }
+    }
 </style>
 
 <script>
-    import {themeValue} from '../../utils/stores.js';
+    import {themeValue} from '../../../utils/stores.js';
 
     let bool = true;
 
@@ -68,7 +85,7 @@
 </script>
 
 <div class="header__theme-wrap">
-    Переключить тему
+    <span>Переключить тему</span>
     <div class="header__theme" on:click={clickHandler} role="checkbox" aria-checked={bool.toString()}
          aria-label="Темная тема">
         <div class="header__theme-control"></div>

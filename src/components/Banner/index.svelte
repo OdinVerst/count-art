@@ -1,5 +1,4 @@
 <script>
-    import Image from './img/banner_main.png';
     import {themeValue} from '../../utils/stores.js';
 
     let stateValue = 'dark';
@@ -37,8 +36,17 @@
       line-height: 1.2;
   }
 
+  .banner__img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
   .banner__img {
       max-width: 100%;
+      padding: 3em 0;
+      width: 450px;
+      aspect-ratio: 1 / 1;
   }
 
   @media (max-width: 1170px) {
@@ -56,6 +64,10 @@
       .banner {
           flex-direction: column;
           margin-top: 2em;
+      }
+
+      .banner__img {
+          padding-top: 1em;
       }
 
       .banner__heading, .banner__subtitle {
@@ -81,7 +93,7 @@
             не интересует</h1>
         <p class="banner__subtitle">умеем справляться со сложными задачами</p>
     </div>
-    <picture>
+    <picture class="banner__img-wrap">
         <source type="image/webp" srcset="/img/banner/banner-{stateValue}.webp">
         <img class="banner__img" src="/img/banner/banner-{stateValue}.png" alt="Cейчас потом не интересует" />
     </picture>

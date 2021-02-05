@@ -1,5 +1,5 @@
 <script>
-    import SocialList from "../../data/social.json"
+    import SocialList from "../../../data/social.json"
     const { social } = SocialList;
 </script>
 
@@ -9,6 +9,7 @@
         width: 20px;
         height: 20px;
         fill: var(--text-color);
+        margin-right: 24px;
     }
 
     .header__link:hover {

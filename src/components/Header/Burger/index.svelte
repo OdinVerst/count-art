@@ -30,6 +30,12 @@
     }
 </style>
 
-<button class="burger" aria-label="Показать меню">
+<script>
+    import { mobileMenuOpen } from "../../../utils/stores";
 
-</button>
+    const clickHandler = (evt) => {
+        mobileMenuOpen.update(() => true)
+    }
+</script>
+
+<button on:click={clickHandler} class="burger" aria-label="Показать меню"></button>

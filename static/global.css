@@ -1,17 +1,20 @@
 :root {
     --bg-dark: #1D1D1D;
+    --bg-dark-opacity: rgba(29, 29, 29, 0.8);
     --white: #fff;
     --text-dark: #9C9C9C;
     --primary-dark: #FFE500;
     --second-dark: #16B5C7;
 
     --bg-light: #fff;
+    --bg-light-opacity: rgba(255, 255, 255, 0.8);
     --dark: black;
     --text-light: #262626;
     --primary-light: #16B5C7;
     --second-light: #FFC804;
 
     --bg-color: var(--bg-dark);
+    --post-overlay: var(--bg-dark-opacity);
     --interface-color: var(--white);
     --text-color: var(--text-dark);
     --primary-color: var(--primary-dark);
@@ -20,6 +23,7 @@
 
 :root[data-color-mode="dark"] {
     --bg-color: var(--bg-dark);
+    --post-overlay: var(--bg-dark-opacity);
     --interface-color: var(--white);
     --text-color: var(--text-dark);
     --primary-color: var(--primary-dark);
@@ -28,6 +32,7 @@
 
 :root[data-color-mode="light"] {
     --bg-color: var(--bg-light);
+    --post-overlay: var(--bg-light-opacity);
     --interface-color: var(--dark);
     --text-color: var(--text-light);
     --primary-color: var(--primary-light);
@@ -37,6 +42,7 @@
 @media (prefers-color-scheme: light) {
     :root[data-color-mode="auto"] {
         --bg-color: var(--bg-light);
+        --post-overlay: var(--bg-light-opacity);
         --interface-color: var(--dark);
         --text-color: var(--text-light);
         --primary-color: var(--primary-light);

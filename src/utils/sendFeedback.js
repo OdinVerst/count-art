@@ -31,6 +31,7 @@ export const sendMessageToTelegram = async (obj) => {
         });
 
         const res = await response.json();
+        console.log(res)
 
     }
 };

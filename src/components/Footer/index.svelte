@@ -7,7 +7,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px;
         padding: 25px 0;
         margin-top: 50px;
         border-top: 2px solid var(--text-color);
@@ -17,13 +16,14 @@
     .footer__logo {
         fill: var(--text-color);
         width: 30px;
+        margin-right: 15px;
     }
 
     .dev::before {
         content: '/';
         color: var(--text-color);
         display: inline-block;
-        margin-right: 15px;
+        margin: 0 15px;
     }
     
     @media (max-width: 543px) {
@@ -47,6 +47,7 @@
             height: 1px;
             background: var(--text-color);
             transform: translateX(-50%);
+            margin: 5px 0;
         }
     }
 </style>

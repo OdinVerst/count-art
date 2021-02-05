@@ -8,7 +8,8 @@
 
 <script>
     import ProjectList from '../../components/Projects/projectList.svelte';
-    import Feedback from '../../components/Feedback/index.svelte'
+    import Feedback from '../../components/Feedback/index.svelte';
+    import MessageButton from '../../components/MessageButton/index.svelte';
 
     export let posts;
 </script>
@@ -19,5 +20,6 @@
 
 <div class="main_container">
     <ProjectList {posts} inner={true} />
+    <MessageButton />
     <Feedback />
 </div>

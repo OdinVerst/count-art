@@ -11,6 +11,7 @@
     import ProjectList from '../components/Projects/projectList.svelte';
     import Company from '../components/Company/index.svelte';
     import Feedback from '../components/Feedback/index.svelte';
+    import MessageButton from '../components/MessageButton/index.svelte';
 
     export let posts;
 </script>
@@ -23,6 +24,7 @@
     <Banner />
     <ProjectList {posts} />
     <Company />
+    <MessageButton />
     <Feedback />
 </div>
 

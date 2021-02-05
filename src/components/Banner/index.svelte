@@ -46,7 +46,7 @@
       max-width: 100%;
       padding: 3em 0;
       width: 450px;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1.02;
   }
 
   @media (max-width: 1170px) {

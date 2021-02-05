@@ -7,6 +7,7 @@ const contents = JSON.stringify(
             slug: post.slug,
             img: post.img,
             img2x: post.img2x,
+            webp: post.webp,
             desc: post.desc,
             category: post.category,
             date: post.date,

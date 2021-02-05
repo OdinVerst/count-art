@@ -1,8 +1,9 @@
 const posts = [
     {
         name: "Разработка логотипа не усложняй.",
-        img: "/img/posts/ne-uslozhnyay/cities@1x.jpg",
-        img2x: "/img/posts/ne-uslozhnyay/cities@2x.jpg",
+        img: "/img/posts/ne-uslozhnyay/cities",
+        img2x: true,
+        webp: true,
         category: "Табак",
         h1: "Разработка логотипа <br>не усложняй. кальянная лавка",
         date: "14.08.2019",
@@ -15,8 +16,9 @@ const posts = [
     },
     {
         name: "Разработка логотипа не усложняй.",
-        img: "/img/posts/ne-uslozhnyay/cities@1x.jpg",
-        img2x: "/img/posts/ne-uslozhnyay/cities@2x.jpg",
+        img: "/img/posts/ne-uslozhnyay/cities",
+        img2x: true,
+        webp: true,
         category: "Табак",
         h1: "Разработка логотипа <br>не усложняй. кальянная лавка",
         date: "14.08.2019",

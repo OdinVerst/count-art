@@ -1,5 +1,5 @@
 <script>
-    export let name, center, notTopBr;
+    export let name, center, notTopBr, component;
     let centerClassName = ''
     let topClassName = ''
     if (center) centerClassName = 'heading--center'
@@ -22,6 +22,12 @@
         color: var(--interface-color);
     }
 
+    .heading__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .heading--not-top {
         border-top: none;
     }
@@ -33,7 +39,8 @@
 </style>
 
 <div class="heading {centerClassName} {topClassName}">
-    <div class="wrapper">
+    <div class="heading__wrapper wrapper">
         <h2>{name}</h2>
+        {#if component}<svelte:component this={component}/> {/if}
     </div>
 </div>

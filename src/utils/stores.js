@@ -4,3 +4,6 @@ export const themeSettings = writable('auto');
 export const themeValue = writable('dark');
 
 export const mobileMenuOpen = writable(false);
+
+export const catalogCategory = writable('all');
+

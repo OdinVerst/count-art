@@ -1,5 +1,6 @@
 <script>
     export let post;
+    import Pin from './projectPin.svelte';
 </script>
 
 <style>
@@ -7,12 +8,27 @@
         position: relative;
     }
 
+    .post--big-left {
+        grid-column: 1 / 3;
+    }
+
+    .post--big-right {
+        grid-column: 3 / -1;
+    }
+
     .post__img {
         width: 100%;
+        min-height: 400px;
+        object-fit: cover;
     }
 
     .post__img-wrap {
         display: flex;
+        width: 100%;
+    }
+
+    .post__title {
+        min-height: 60px;
     }
 
     .post__title::before {
@@ -20,7 +36,7 @@
         display: inline-block;
         width: 100%;
         height: 2px;
-        background: var(--text-color);
+        background: var(--color-separate);
         margin-bottom: 18px;
     }
 
@@ -54,11 +70,13 @@
         opacity: 1;
     }
 
-
-
+    .post__pins-wrap {
+        margin-top: 15px;
+        max-width: 270px;
+    }
 </style>
 
-<article class="post">
+<article class="post {post.big ? 'post--big-' + post.big : ''}">
     <a class="post__href-img" href={'/projects/' + post.slug}>
         <picture class="post__img-wrap">
             {#if post.webp}
@@ -69,5 +87,9 @@
     </a>
     <h3 class="post__title"><a href={'/projects/' + post.slug}>{post.name}</a></h3>
     <time>{post.date}</time>
-    <p>{post.category}</p>
+    <div class="post__pins-wrap">
+        {#each post.category as item}
+            <Pin pinpost={item} />
+        {/each}
+    </div>
 </article>

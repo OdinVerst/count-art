@@ -110,7 +110,7 @@
     });
 
     const clickHandler = () => {
-        const feedback = document.querySelector('.feedback input');
+        const feedback = document.querySelector('.feedback');
 
         window.scroll({
             top: feedback.offsetTop,

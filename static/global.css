@@ -1,7 +1,7 @@
 :root {
     --bg-dark: #1D1D1D;
     --dark-grey: #404040;
-    --bg-dark-opacity: rgba(29, 29, 29, 0.8);
+    --bg-dark-opacity: rgba(29, 29, 29, 0.4);
     --white: #fff;
     --text-dark: #9C9C9C;
     --primary-dark: #FFE500;
@@ -9,7 +9,7 @@
 
     --bg-light: #fff;
     --light-grey: #dddddd;
-    --bg-light-opacity: rgba(255, 255, 255, 0.8);
+    --bg-light-opacity: rgba(255, 255, 255, 0.4);
     --dark: black;
     --text-light: #262626;
     --primary-light: #16B5C7;

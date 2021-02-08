@@ -18,13 +18,15 @@
 
     .post__img {
         width: 100%;
-        min-height: 400px;
+        height: 400px;
         object-fit: cover;
+        transition: 1.2s;
     }
 
     .post__img-wrap {
         display: flex;
         width: 100%;
+        overflow: hidden;
     }
 
     .post__title {
@@ -51,7 +53,7 @@
     }
 
     .post__href-img::after {
-        content: 'Посмотреть проект';
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
@@ -70,9 +72,29 @@
         opacity: 1;
     }
 
+    .post__href-img:hover .post__img {
+        transform: scale(1.3);
+    }
+
     .post__pins-wrap {
         margin-top: 15px;
         max-width: 270px;
+    }
+    
+    @media (max-width: 1165px) {
+        .post--big-right {
+            grid-column: 1 / 3;
+        }
+    }
+
+    @media (max-width: 670px) {
+        .post--big-right, .post--big-left {
+            grid-column: 1;
+        }
+
+        .post__img {
+            height: auto;
+        }
     }
 </style>
 

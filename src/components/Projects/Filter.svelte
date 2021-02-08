@@ -63,7 +63,7 @@
 
 <div class="filter {nameCategory === 'all' ? 'hide' : ''}">
     <div class="current-pin">{ nameCategory }
-        <button on:click={clickHandler} class="remove-pin">
+        <button aria-label="Удалить фильтр" on:click={clickHandler} class="remove-pin">
             <svg class="remove-pin__ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 121.57 121.57">
                 <path d="M7.46,121.57a7.46,7.46,0,0,1-5.28-12.73L108.84,2.18a7.46,7.46,0,1,1,10.55,10.55L12.73,119.39A7.45,7.45,0,0,1,7.46,121.57Z"/>
                 <path d="M114.11,121.57a7.45,7.45,0,0,1-5.27-2.18L2.18,12.73A7.46,7.46,0,0,1,12.73,2.18L119.39,108.84a7.46,7.46,0,0,1-5.28,12.73Z"/>

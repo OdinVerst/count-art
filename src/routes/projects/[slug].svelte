@@ -1,10 +1,10 @@
 <script context="module">
 	export async function preload({ params }) {
 		const resDetailPost = await this.fetch(`projects/${params.slug}.json`);
-		const dataDetail = await resDetailPost.json();
-		
+		const data = await resDetailPost.json();
+
 		if (resDetailPost.status === 200) {
-			return { post: dataDetail };
+			return { post: data};
 		} else {
 			this.error(resDetailPost.status, data.message);
 		}
@@ -15,13 +15,17 @@
     export let post;
 
     import { onMount } from 'svelte';
-    import Swiper from 'swiper';
+    import Swiper, { Navigation } from 'swiper';
 
     onMount(() => {
-        var mySwiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 1
-        })
+        Swiper.use([Navigation]);
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.button-next',
+                prevEl: '.button-prev',
+            },
+        });
     });
 
 </script>
@@ -58,9 +62,10 @@
 </style>
 
 <svelte:head>
-	<title>{post.title}</title>
+    <title>{post.title}</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </svelte:head>
+
 
 <div class="wrapper project">
     <a class="back-to-project" href="/projects">Вернуться к проектам</a>

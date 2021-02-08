@@ -63,7 +63,10 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
+               
             `,
     },
     {
@@ -107,6 +110,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -151,6 +156,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -196,6 +203,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -244,6 +253,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -291,6 +302,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -338,6 +351,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },
@@ -385,6 +400,8 @@ const posts = [
                             <img class="img--full" src="/img/posts/ne-uslozhnyay/ne-uslozhnyay-main.jpg" />
                         </div>
                     </div>
+                    <button class="button-next button-nav"></button>
+                    <button class="button-prev button-nav"></button>
                </div>
             `,
     },

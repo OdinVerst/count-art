@@ -7,9 +7,12 @@
     import MobileMenu from './mobile.svelte';
 
     export let segment;
-    import { mobileMenuOpen } from '../../utils/stores.js';
+    import {is404, mobileMenuOpen} from '../../utils/stores.js';
 
     let stateMobileMenu = false;
+    let val404 = false;
+
+    is404.subscribe(val => val404 = val);
 
     mobileMenuOpen.subscribe(value => {
         stateMobileMenu = value;
@@ -43,7 +46,7 @@
         margin-bottom: 5px;
     }
     
-    @media (max-width: 777px) {
+    @media (max-width: 800px) {
         .header {
             margin-bottom: 18px;
         }
@@ -85,7 +88,7 @@
 
 <header class="header">
     <div class="header__wrapper wrapper">
-        {#if segment !== undefined}
+        {#if segment !== undefined || val404}
             <a class="header__logo-wrap" href="/">
                 <Logo/>
             </a>

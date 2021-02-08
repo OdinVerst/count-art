@@ -35,7 +35,7 @@
         margin-left: 3px;
     }
 
-    @media (max-width: 777px) {
+    @media (max-width: 800px) {
         .header__theme-wrap {
             width: 100%;
             margin-top: 45px;

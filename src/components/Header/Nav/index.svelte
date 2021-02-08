@@ -32,7 +32,7 @@
         color: var(--second-color);
     }
 
-    @media (max-width: 777px) {
+    @media (max-width: 800px) {
         .nav__separate {
             border-bottom: none;
             padding-top: 20px;

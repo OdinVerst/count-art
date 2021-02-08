@@ -8,11 +8,22 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 30px;
+        align-items: center;
         margin: 25px auto;
     }
 
     .company__logo {
-        max-width: 75px;
+        max-width: 100%;
+        filter: grayscale(1) contrast(0.2);
+    }
+
+    .company__logo:hover {
+        filter: none;
+    }
+
+    .company__item {
+        display: flex;
+        justify-content: center;
     }
 </style>
 
@@ -22,7 +33,6 @@
         {#each ClientsList.clients as item}
             <div class="company__item">
                 <img src={item.img} class="company__logo" alt={item.alt}>
-                <p>{@html item.name}</p>
             </div>
         {/each}
     </div>

@@ -79,7 +79,7 @@
         stroke: var(--text-color)
     }
     
-    @media (min-width: 778px) {
+    @media (min-width: 801px) {
         .header__wrapper--mobile {
             display: none;
         }

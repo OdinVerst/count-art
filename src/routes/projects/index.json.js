@@ -8,10 +8,10 @@ const contents = JSON.stringify(
             img: post.img,
             img2x: post.img2x,
             webp: post.webp,
+            big: post.big,
             desc: post.desc,
             category: post.category,
             date: post.date,
-            category_url: post.category_url,
         };
     })
 );

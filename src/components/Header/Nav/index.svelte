@@ -1,7 +1,7 @@
 <style>
     .nav__separate{
-        border-top: 2px solid var(--text-color);
-        border-bottom: 2px solid var(--text-color);
+        border-top: 2px solid var(--color-separate);
+        border-bottom: 2px solid var(--color-separate);
     }
 
     .nav {
@@ -21,18 +21,18 @@
         color: var(--text-color);
         text-decoration: none;
         padding: 26px 60px;
-        border-left: 2px solid var(--text-color);
+        border-left: 2px solid var(--color-separate);
     }
 
     .nav__href:hover {
-        color: #16B5C7;
+        color: var(--primary-color);
     }
 
     [aria-current], [aria-current]:hover {
-        color: #FFE500;
+        color: var(--second-color);
     }
 
-    @media (max-width: 777px) {
+    @media (max-width: 800px) {
         .nav__separate {
             border-bottom: none;
             padding-top: 20px;
@@ -44,7 +44,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            background: var(--text-color);
+            background: var(--color-separate);
             height: 2px;
             top: 16px;
         }

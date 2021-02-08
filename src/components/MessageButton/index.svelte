@@ -76,6 +76,7 @@
     };
 
     const positionCalc = () => {
+        if (!document.querySelector('.feedback')) return;
         const widthWindows = document.body.clientWidth;
         if (widthWindows > 1170) {
             positionState.rightState = `${(widthWindows - 1170) / 2}px`
@@ -83,7 +84,12 @@
             positionState.rightState = '20px';
         }
 
-        positionState.hide = window.scrollY > document.querySelector('.feedback').offsetTop - (window.innerHeight / 1.5);
+        let heightRatio = 1.5;
+        if (widthWindows < 777) {
+            heightRatio = 1;
+        }
+
+        positionState.hide = window.scrollY > document.querySelector('.feedback').offsetTop - (window.innerHeight / heightRatio);
 
         if (widthWindows < 777) {
             positionState.topState = 'auto';
@@ -110,7 +116,7 @@
     });
 
     const clickHandler = () => {
-        const feedback = document.querySelector('.feedback input');
+        const feedback = document.querySelector('.feedback');
 
         window.scroll({
             top: feedback.offsetTop,

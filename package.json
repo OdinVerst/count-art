@@ -14,7 +14,7 @@
     "node-fetch": "^2.6.1",
     "polka": "next",
     "sirv": "^1.0.0",
-    "swiper": "^6.4.7"
+    "swiper": "^6.4.11"
   },
   "devDependencies": {
     "sapper": "^0.28.0",

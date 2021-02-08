@@ -1,19 +1,27 @@
 <style>
     .alert {
         position: absolute;
-        right: 0;
+        right: 25%;
+        left: auto;
         top: 0;
-        width: 50%;
-        background: var(--text-color);
+        width: auto;
+        background: var(--bg-alert);
         text-align: center;
-        padding: 5px 0;
-        color: var(--bg-color);
-        border-radius: 5px;
-        transform: translateY(-100%);
+        transform: translate(50%, -100%);
         margin-top: -10px;
+        padding: 17px 27px;
+        border-radius: 100px;
+        color: var(--primary-color);
+        min-width: 300px;
+    }
+    
+    @media (max-width: 860px) {
+        .alert {
+            right: 50%;
+        }
     }
 </style>
 
 <div class="alert">
-    Сообщение отправлено!
+    Ура! Ваша заявка успешно отправлена.
 </div>

@@ -1,29 +1,28 @@
 {
   "clients": [
     {
-      "name": "Count Art <br> test",
-      "img": "/img/clients/count.svg",
-      "alt": "Логотип компании"
+      "img": "/img/clients/hp.svg",
+      "alt": "Логотип Hookah Place"
     },
     {
-      "name": "Count Art 2",
-      "img": "/img/clients/count.svg",
-      "alt": "Логотип компании"
+      "img": "/img/clients/ne-usloz.svg",
+      "alt": "Логотип Не усложняй"
     },
     {
-      "name": "Count Art 3",
-      "img": "/img/clients/count.svg",
-      "alt": "Логотип компании"
+      "img": "/img/clients/ne-usloz-2.svg",
+      "alt": "Логотип Не усложняй"
     },
     {
-      "name": "Count Art 4",
-      "img": "/img/clients/count.svg",
-      "alt": "Логотип компании"
+      "img": "/img/clients/hp.svg",
+      "alt": "Логотип Hookah Place"
     },
     {
-      "name": "Count Art 5",
-      "img": "/img/clients/count.svg",
-      "alt": "Логотип компании"
+      "img": "/img/clients/ne-usloz.svg",
+      "alt": "Логотип Не усложняй"
+    },
+    {
+      "img": "/img/clients/ne-usloz-2.svg",
+      "alt": "Логотип Не усложняй"
     }
   ]
 }

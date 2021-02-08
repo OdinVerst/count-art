@@ -23,7 +23,7 @@
         transform: translateY(-50%);
     }
 
-    @media (max-width: 777px) {
+    @media (max-width: 800px) {
         .burger {
             display: block;
         }

@@ -2,13 +2,13 @@
     .feedback__form-wrap {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: var(--text-color);
+        background: var(--color-separate);
         gap: 2px;
         padding: 0 2px;
     }
 
     .feedback__form--separate {
-        background: var(--text-color);
+        background: var(--color-separate);
         height: 2px;
         width: 100%;
         margin-bottom: 20px;

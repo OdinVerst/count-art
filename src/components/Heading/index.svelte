@@ -8,12 +8,12 @@
 
 <style>
     .heading {
-        border-top: 2px solid var(--text-color);
-        border-bottom: 2px solid var(--text-color);
+        border-top: 2px solid var(--color-separate);
+        border-bottom: 2px solid var(--color-separate);
     }
 
     .heading:not(.heading--center) h2 {
-        border-right: 2px solid var(--text-color);
+        border-right: 2px solid var(--color-separate);
         padding: 27px 27px 27px 0;
         margin: 0;
         display: inline-block;

@@ -1,5 +1,6 @@
 :root {
     --bg-dark: #1D1D1D;
+    --dark-grey: #404040;
     --bg-dark-opacity: rgba(29, 29, 29, 0.8);
     --white: #fff;
     --text-dark: #9C9C9C;
@@ -7,6 +8,7 @@
     --second-dark: #16B5C7;
 
     --bg-light: #fff;
+    --light-grey: #404040;
     --bg-light-opacity: rgba(255, 255, 255, 0.8);
     --dark: black;
     --text-light: #262626;
@@ -14,6 +16,7 @@
     --second-light: #FFC804;
 
     --bg-color: var(--bg-dark);
+    --color-separate: var(--dark-grey);
     --post-overlay: var(--bg-dark-opacity);
     --interface-color: var(--white);
     --text-color: var(--text-dark);
@@ -23,6 +26,7 @@
 
 :root[data-color-mode="dark"] {
     --bg-color: var(--bg-dark);
+    --color-separate: var(--dark-grey);
     --post-overlay: var(--bg-dark-opacity);
     --interface-color: var(--white);
     --text-color: var(--text-dark);
@@ -32,6 +36,7 @@
 
 :root[data-color-mode="light"] {
     --bg-color: var(--bg-light);
+    --color-separate: var(--light-grey);
     --post-overlay: var(--bg-light-opacity);
     --interface-color: var(--dark);
     --text-color: var(--text-light);
@@ -42,6 +47,7 @@
 @media (prefers-color-scheme: light) {
     :root[data-color-mode="auto"] {
         --bg-color: var(--bg-light);
+        --color-separate: var(--light-grey);
         --post-overlay: var(--bg-light-opacity);
         --interface-color: var(--dark);
         --text-color: var(--text-light);

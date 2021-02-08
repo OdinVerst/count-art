@@ -9,8 +9,8 @@
         align-items: center;
         padding: 25px 0;
         margin-top: 50px;
-        border-top: 2px solid var(--text-color);
-        border-bottom: 2px solid var(--text-color);
+        border-top: 2px solid var(--color-separate);
+        border-bottom: 2px solid var(--color-separate);
     }
 
     .footer__logo {

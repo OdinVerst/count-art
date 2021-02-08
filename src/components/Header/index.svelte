@@ -57,7 +57,7 @@
             align-items: center;
             padding-top: 20px;
             padding-bottom: 20px;
-            border-bottom: 2px solid var(--text-color);
+            border-bottom: 2px solid var(--color-separate);
         }
 
         .header__wrapper::before {
@@ -67,7 +67,7 @@
             right: 0;
             bottom: 0;
             height: 2px;
-            background: var(--text-color);
+            background: var(--color-separate);
             margin-bottom: -20px;
         }
 

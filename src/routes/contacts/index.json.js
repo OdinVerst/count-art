@@ -5,11 +5,8 @@ export const post = (req, res) => {
     res.writeHead(200, {
         'Content-Type': 'application/json'
     });
-    sendMessageToTelegram(req.body)
-        .catch(e =>
-            sendMessageToEmail(req.body).catch(e => console.log(e))
-        );
-
+    sendMessageToTelegram(req.body).catch(e => console.log(e));
+    sendMessageToEmail(req.body).catch(e => console.log(e))
 
     const data = {
         status: "send"

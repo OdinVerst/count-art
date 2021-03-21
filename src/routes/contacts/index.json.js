@@ -6,10 +6,9 @@ export const post = async (req, res) => {
         'Content-Type': 'application/json'
     });
     await sendMessageToTelegram(req.body)
-        .catch(e =>
-            sendMessageToEmail(req.body).catch(e => console.log(e))
-        );
-
+        .catch(e => console.log(e));
+    await sendMessageToEmail(req.body)
+        .catch(e => console.log(e));
 
     const data = {
         status: "send"

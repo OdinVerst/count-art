@@ -97,9 +97,6 @@
 
     .check__input {
         position: absolute;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         opacity: 0;
         z-index: -10;
     }
@@ -230,7 +227,7 @@
         <div class="feedback__form--separate"></div>
         <div class="feedback__form--bottom wrapper">
             <label class="feedback__form--privacy check option">
-                <input class="check__input" type="checkbox">
+                <input required class="check__input" type="checkbox">
                 <div class="check__box"></div>
                 Я согласен на обработку
                 персональных данных

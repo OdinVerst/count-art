@@ -1,14 +1,18 @@
-import {sendMessageToTelegram} from "../../utils/sendFeedback";
+import {sendMessageToEmail, sendMessageToTelegram} from "../../utils/sendFeedback";
 
 
 export const post = (req, res) => {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
+    res.writeHead(200, {
+        'Content-Type': 'application/json'
     });
-	sendMessageToTelegram(req.body).catch(error => console.log(error));
+    sendMessageToTelegram(req.body)
+        .catch(e =>
+            sendMessageToEmail(req.body).catch(e => console.log(e))
+        );
 
-	const data = {
-	    status: "send"
+
+    const data = {
+        status: "send"
     }
-	res.end(JSON.stringify(data));
+    res.end(JSON.stringify(data));
 }

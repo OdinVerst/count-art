@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import https from 'https';
 
 const token = process.env.TOKEN_TELEGRAM;
-const chatIdArray = [process.env.ADMIN_USER_TG];
+const chatIdArray = [process.env.ADMIN_USER_TG, process.env.SECOND_USER_TG];
 const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
 const replacer = (str) => {

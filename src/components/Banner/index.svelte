@@ -25,13 +25,13 @@
   .banner__heading {
       color: var(--interface-color);
       font-size: 31px;
-      max-width: 220px;
+      max-width: 240px;
       line-height: 1.2;
   }
 
   .banner__subtitle {
       color: var(--second-color);
-      max-width: 220px;
+      max-width: 240px;
       font-size: 17px;
       line-height: 1.2;
   }
@@ -89,9 +89,8 @@
 
 <section class="banner wrapper">
     <div class="banner__content">
-        <h1 class="banner__heading">Cейчас потом
-            не интересует</h1>
-        <p class="banner__subtitle">умеем справляться со сложными задачами</p>
+        <h1 class="banner__heading">Делаем то, что нужно сейчас</h1>
+        <p class="banner__subtitle">даже если очень сложно</p>
     </div>
     <picture class="banner__img-wrap">
         <source type="image/webp" srcset="/img/banner/banner-{stateValue}.webp">

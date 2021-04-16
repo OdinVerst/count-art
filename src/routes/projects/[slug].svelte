@@ -58,11 +58,12 @@
         text-align: center;
         font-size: 24px;
         margin: 50px 0;
+        line-height: 1.23;
     }
 </style>
 
 <svelte:head>
-    <title>{post.title}</title>
+    <title>{post.title} - Count Art</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </svelte:head>
 

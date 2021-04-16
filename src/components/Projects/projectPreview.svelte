@@ -31,6 +31,7 @@
 
     .post__title {
         min-height: 60px;
+        line-height: 1.4;
     }
 
     .post__title::before {
@@ -85,9 +86,10 @@
         .post--big-right {
             grid-column: 1 / 3;
         }
+
     }
 
-    @media (max-width: 670px) {
+    @media (max-width: 510px) {
         .post--big-right, .post--big-left {
             grid-column: 1;
         }
@@ -107,7 +109,7 @@
             <img class="post__img" src={post.img + '@1x.jpg'} srcset="{post.img2x ? post.img + '@2x.jpg' : post.img + '@1x.jpg'} 2x" alt="Разработка фирменного стиля Tree Trunk">
         </picture>
     </a>
-    <h3 class="post__title"><a href={'/projects/' + post.slug}>{post.name}</a></h3>
+    <h3 class="post__title"><a href={'/projects/' + post.slug}>{@html post.name}</a></h3>
     <time>{post.date}</time>
     <div class="post__pins-wrap">
         {#each post.category as item}

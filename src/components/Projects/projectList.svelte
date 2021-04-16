@@ -21,7 +21,7 @@
 <style>
     .post-list__grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
         gap: 18px;
         margin: 25px auto;
         grid-auto-flow: dense;

@@ -19,6 +19,7 @@
     .header__logo-title {
         color: var(--text-color);
         margin: 0;
+        font-size: 13px;
     }
     
     @media (max-width: 568px) {

@@ -56,7 +56,7 @@
     <div class="wrapper contacts">
         <h1>Связаться с нами можно<br> очень просто:</h1>
         <p>По телефону</p>
-        <a class="tel-href" href="tel:+799999999">+7 920 999 99 99</a>
+        <a class="tel-href" href="tel:+79208295228">+7 (920) 829-52-28</a>
         <p>или в наших соцсетях</p>
         <div class="social-list">
             {#each social as item}
